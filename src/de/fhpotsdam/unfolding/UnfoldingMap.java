@@ -626,13 +626,13 @@ public class UnfoldingMap implements MapEventListener {
 	 * 
 	 * @deprecated Use {@link #zoomAndPanTo(int, ScreenPosition)}.
 	 * 
-	 * @param screenPosition
+	 * @param location1
 	 *            ScreenPosition to zoom around and pan to.
-	 * @param level
+	 * @param d
 	 *            Zoom level to zoom to.
 	 */
-	public void zoomAndPanTo(ScreenPosition screenPosition, int level) {
-		zoomAndPanTo(level, screenPosition);
+	public void zoomAndPanTo(Location location1, double d) {
+		//zoomAndPanTo(d, location1);
 	}
 
 	/**

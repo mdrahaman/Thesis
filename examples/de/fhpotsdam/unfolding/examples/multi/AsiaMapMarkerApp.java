@@ -70,12 +70,7 @@ public class AsiaMapMarkerApp extends PApplet {
 		map2.addMarkers(countryMarkers);
 		
 		
-		JLabel label2 = new JLabel();
-		label2.setText("Introduction & Geography");
-		map2.add(label2);
-		label2.setForeground(Color.green);
-		label2.setBounds(1480, 200, 440, 30);
-		label2.setFont(new Font("Serif", Font.BOLD, 28));
+		
 	}
 
 	public void draw() {

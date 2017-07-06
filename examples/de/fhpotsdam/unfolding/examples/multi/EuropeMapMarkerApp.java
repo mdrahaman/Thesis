@@ -75,13 +75,14 @@ public class EuropeMapMarkerApp extends PApplet {
 	public void draw() {
 		background(200);
 		map2.draw();
-		// map2.draw();
+		
 
-		// show latitute anad lagnitute at mouse position
-		// fill(300,0,0,500); // mouse pointer colour filling
-		// noFill();
-		// Location location = map2.getLocation(mouseX, mouseY);
-		// text("geoPosition:" +location.toString(),mouseX,mouseY);
+		 /*show latitute anad lagnitute at mouse position*/
+		
+//		 fill(300,0,0,500); // mouse pointer colour filling
+//		 noFill();
+//		 Location location = map2.getLocation(mouseX, mouseY);
+//		 text("geoPosition:" +location.toString(),mouseX,mouseY);
 	}
 	
 	

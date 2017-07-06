@@ -1,7 +1,7 @@
 
 package de.fhpotsdam.unfolding.examples.multi;
 
-import java.awt.Color;
+import java.awt.Color; 
 import java.awt.Font;
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
@@ -18,25 +18,20 @@ import de.fhpotsdam.unfolding.data.GeoJSONReader;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.marker.SimplePolygonMarker;
+import de.fhpotsdam.unfolding.providers.Google;
+import de.fhpotsdam.unfolding.providers.Microsoft;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import processing.core.PApplet;
 
-/**
- * Clones marker to be used in coordinated views, but with different styles
- * and/or functionality. Manual implementation of clone; works for simple
- * polygons only (not for e.g. France).
- * 
- * Different to normal case: For displaying same markers in multiple maps,
- * simply add it to both maps.
- */
+
+
 public class AfricaMapMarkerApp extends PApplet {
 
 	UnfoldingMap map2;
-	// UnfoldingMap map2;
 
 	public void settings() {
+		System.out.println("settings");
 		size(1920, 1000, P2D);
-		// smooth();
 	}
 	
 	
@@ -50,10 +45,15 @@ public class AfricaMapMarkerApp extends PApplet {
 	}
 
 	public void setup() {
-		map2 = new UnfoldingMap(this, 0, 50, 1470, 930);
-		// map2.zoomToLevel(3);
-		Location location1 = new Location(8.456, 20.987);
-		map2.zoomAndPanTo(location1, 4);
+		System.out.println("setup");
+		
+//		map2 = new UnfoldingMap(this, "map2", 880, 10, 600, 1000, true, false, new Microsoft.HybridProvider());
+		map2 = new UnfoldingMap(this, "map2", 880, 10, 600, 1000, true, false, new Google.GoogleSimplifiedProvider());
+		
+//		map2 = new UnfoldingMap(this, 0, 50, 1470, 930);
+		 map2.zoomToLevel(3.5);
+		Location location1 = new Location(15.456, 20.987);
+		map2.zoomAndPanTo(location1, 3.5);
 		MapUtils.createDefaultEventDispatcher(this, map2);
 
 		// map2 = new UnfoldingMap(this, 560, 50, 100, 100);
@@ -74,6 +74,7 @@ public class AfricaMapMarkerApp extends PApplet {
 	}
 
 	public void draw() {
+		System.out.println("draw");
 		background(200);
 		map2.draw();
 		// map2.draw();
@@ -87,8 +88,7 @@ public class AfricaMapMarkerApp extends PApplet {
 	
 	
 
-	// Marker selectedMarker = null;
-	//
+	
 	public void mouseClicked() {
 		Marker marker = map2.getFirstHitMarker(mouseX, mouseY);
 		if (marker != null) {
@@ -104,7 +104,7 @@ public class AfricaMapMarkerApp extends PApplet {
 		// Deselect All Markers
 		for (Marker marker : map2.getMarkers()) {
 			marker.setSelected(false);
-			marker.setStrokeWeight(1);
+			marker.setStrokeWeight(0);
 		}
 
 		// Get Selected Marker
