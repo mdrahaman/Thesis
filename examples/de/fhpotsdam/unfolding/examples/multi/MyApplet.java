@@ -5,9 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
-
 import processing.core.PApplet;
 import processing.core.PImage;
+
 
 public class MyApplet extends PApplet implements ActionListener {
 
@@ -97,6 +97,11 @@ public class MyApplet extends PApplet implements ActionListener {
 			fill(color.getRGB(), 120);
 			ellipse(x, y, size, size);
 		}
+	}
+
+	public void init() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

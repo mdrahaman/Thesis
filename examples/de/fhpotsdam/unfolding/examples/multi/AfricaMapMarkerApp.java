@@ -2,6 +2,7 @@
 package de.fhpotsdam.unfolding.examples.multi;
 
 import java.awt.Color; 
+
 import java.awt.Font;
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
@@ -30,7 +31,7 @@ public class AfricaMapMarkerApp extends PApplet {
 	UnfoldingMap map2;
 
 	public void settings() {
-		System.out.println("settings");
+		
 		size(1920, 1000, P2D);
 	}
 	
@@ -45,7 +46,7 @@ public class AfricaMapMarkerApp extends PApplet {
 	}
 
 	public void setup() {
-		System.out.println("setup");
+		
 		
 //		map2 = new UnfoldingMap(this, "map2", 880, 10, 600, 1000, true, false, new Microsoft.HybridProvider());
 		map2 = new UnfoldingMap(this, "map2", 880, 10, 600, 1000, true, false, new Google.GoogleSimplifiedProvider());
@@ -74,7 +75,7 @@ public class AfricaMapMarkerApp extends PApplet {
 	}
 
 	public void draw() {
-		System.out.println("draw");
+		
 		background(200);
 		map2.draw();
 		// map2.draw();
