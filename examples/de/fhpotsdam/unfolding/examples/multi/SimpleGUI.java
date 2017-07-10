@@ -25,7 +25,7 @@ public class SimpleGUI extends JFrame{
 			
 			
 			
-			SimpleAplet applet = new SimpleAplet();
+			final SimpleAplet applet = new SimpleAplet();
 			applet.init();
 			
 			
@@ -41,8 +41,10 @@ public class SimpleGUI extends JFrame{
 			panel.add(btn1);
 			panel.add(btn2);
 			win.add(panel);
-			panel.add(applet);
-			//frame.setSize(applet.getSize().width, applet.getSize().height);
+//			panel.add(applet);
+			
+			
+			win.setSize(applet.getSize().width, applet.getSize().height);
 		
 			win.setVisible(true);
 			
